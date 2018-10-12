@@ -13,7 +13,7 @@ public class AspectTest {
     @Autowired
     private Anno anno;
 
-    @Pointcut("@annotation(AdminOnly)")
+    @Pointcut("@annotation(com.service.AdminOnly)")
     public void anno() {
 
     };

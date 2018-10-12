@@ -1,6 +1,8 @@
 package com;
 
 import com.service.AnnotationAopService;
+import com.service.log.LogService;
+import com.service.log.LogService2;
 import com.service.sub.SubService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,9 +20,17 @@ public class AnnotationAopTest {
     @Autowired
     private SubService subService;
 
+    @Autowired
+    private LogService logService;
+
+    @Autowired
+    private LogService2 logService2;
+
     @Test
     public void annotationTest() {
         subService.test1();
         annotationAopService.test1();
+        logService.log();
+        logService2.log();
     }
 }
