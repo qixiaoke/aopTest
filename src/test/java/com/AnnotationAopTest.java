@@ -1,6 +1,7 @@
 package com;
 
 import com.service.AnnotationAopService;
+import com.service.args.ArgsService;
 import com.service.log.LogService;
 import com.service.log.LogService2;
 import com.service.sub.SubService;
@@ -26,11 +27,16 @@ public class AnnotationAopTest {
     @Autowired
     private LogService2 logService2;
 
+    @Autowired
+    private ArgsService argsService;
+
     @Test
     public void annotationTest() {
         subService.test1();
         annotationAopService.test1();
         logService.log();
         logService2.log();
+        argsService.find(1L);
+        argsService.find(1L, "name");
     }
 }
