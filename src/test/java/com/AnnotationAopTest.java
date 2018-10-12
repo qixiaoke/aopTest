@@ -1,5 +1,7 @@
 package com;
 
+import com.service.AnnotationAopService;
+import com.service.sub.SubService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,12 @@ public class AnnotationAopTest {
     @Autowired
     private AnnotationAopService annotationAopService;
 
+    @Autowired
+    private SubService subService;
+
     @Test
     public void annotationTest() {
+        subService.test1();
         annotationAopService.test1();
     }
 }
